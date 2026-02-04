@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pumpi</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Иконки для PWA -->
+    <link rel="icon" href="Логотип/Логотип2 .5.png" sizes="192x192" type="image/png" />
+    <link rel="apple-touch-icon" href="icon-512.png" />
+</head>
+
+<body class="body">
+    <header class="header">
+
+        <div class="container_header1">
+            <div class="container_container1">
+                <img src="Логотип/Логотип2.png" alt="Лого" class="header_img">
+                <p class="header_text1">Pumpi</p>
+            </div>
+            <div class="container_header2">
+                <h2 class="header_title2">WANNA GOOD MUSIC</h2>
+                <p class="header_text2">then join us</p>
+            </div>
+            <ul class="header_list">
+                <li class="header_item"><a href="index.html">Главная</a></li>
+                <li class="header_item"><a href="favorites.html">Избранное</a></li>
+                <li class="header_item"><a href="history.html">О нас</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <main class="main">
+
+        <section class="main_section2">
+            <h1 class="main_title2">Популярное</h1>
+            <div class="container_main_au">
+                <div class="container_in_main1">
+                    <div class="container_au1">
+                        <img src="Фото/mp31(1).jpeg" alt="au1" class="img_au1" />
+                        <div class="au1_1">
+                            <form class="main_au_btn1" action="#">
+                                <button class="au1_btn">Three Days Grace - I Hate Everything About You</button>
+                            </form>
+                            <audio controls class="au1" id="track-info1" data-id="1">
+                                <source src="music\rock\Three_Days_Grace_-_I_Hate_Everything_About_You.mp3"
+                                    type="audio/mpeg" />
+                            </audio>
+                            <button onclick="addToFavorites(1)" class="btn2_main"><img src="Фото/like2.png"
+                                    alt="like"></button>
+                        </div>
+                    </div>
+                    <div class="container_au1">
+                        <img src="Фото/mp31(1).jpeg" alt="au1" class="img_au1" />
+                        <div class="au1_1">
+                            <form class="main_au_btn1" action="#">
+                                <button class="au1_btn">In the End - Linkin Park</button>
+                            </form>
+                            <audio controls class="au1" id="track-info2" data-id="2">
+                                <source src="music\rock\Linkin_Park_-_In_The_End.mp3" type="audio/mpeg" />
+                            </audio>
+                            <button onclick="addToFavorites(1)" class="btn2_main"><img src="Фото/like2.png"
+                                    alt="like"></button>
+                        </div>
+                    </div>
+                    <div class="container_au1">
+                        <img src="Фото/mp31(1).jpeg" alt="au1" class="img_au1" />
+                        <div class="au1_1">
+                            <form class="main_au_btn1" action="#">
+                                <button class="au1_btn">Numb - Linkin Park</button>
+                            </form>
+                            <audio controls class="au1" id="track-info3" data-id="3">
+                                <source src="music\rock\Linkin_Park_-_Numb.mp3" type="audio/mpeg" />
+                            </audio>
+                            <button onclick="addToFavorites(1)" class="btn2_main"><img src="Фото/like2.png"
+                                    alt="like"></button>
+
+                        </div>
+                    </div>
+                    <div class="container_au1">
+                        <img src="Фото/mp31(1).jpeg" alt="au1" class="img_au1" />
+                        <div class="au1_1">
+                            <form class="main_au_btn1" action="#">
+                                <button class="au1_btn">Nirvana - Smells like teen spirit</button>
+                            </form>
+                            <audio controls class="au1" id="track-info42" data-id="4">
+                                <source src="music\rock\smells-like-teen-spirit.mp3" type="audio/mpeg" />
+                            </audio>
+                            <button onclick="addToFavorites(1)" class="btn2_main"><img src="Фото/like2.png"
+                                    alt="like"></button>
+                        </div>
+                    </div>
+                    <div class="container_au1">
+                        <img src="Фото/mp31(1).jpeg" alt="au1" class="img_au1" />
+                        <div class="au1_1">
+                            <form class="main_au_btn1" action="#">
+                                <button class="au1_btn">I_Got_Love - Мияги,Эндшпил</button>
+                            </form>
+                            <audio controls class="au1" id="track-info42" data-id="4">
+                                <source src="music\rap\Miyagi_Rem_Digga_-_I_Got_Love.mp3" type="audio/mpeg" />
+                            </audio>
+                            <button onclick="addToFavorites(1)" class="btn2_main"><img src="Фото/like2.png"
+                                    alt="like"></button>
+                        </div>
+                    </div>
+                    <div class="container_au1">
+                        <img src="Фото/mp31(1).jpeg" alt="au1" class="img_au1" />
+                        <div class="au1_1">
+                            <form class="main_au_btn1" action="#">
+                                <button class="au1_btn">Грибы - Тает лёд</button>
+                            </form>
+                            <audio controls class="au1" id="track-info42" data-id="4">
+                                <source src="music\modern\Griby_-_Taet_Ljod.mp3" type="audio/mpeg" />
+                            </audio>
+                            <button onclick="addToFavorites(1)" class="btn2_main"><img src="Фото/like2.png"
+                                    alt="like"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container_in_main2">
+                    <div class="container_au2">
+                        <img src="Фото/mp31(1).jpeg" alt="au2" class="img_au2" />
+                        <div class="au2_2">
+                            <div class="container_in_au2_2">
+                                <form class="main_au_btn2" action="#">
+                                    <button class="au2_btn">Грибы - Тает лёд</button>
+                                </form>
+                                <audio controls class="au2" id="track-info42" data-id="4">
+                                    <source src="music\modern\Griby_-_Taet_Ljod.mp3" type="audio/mpeg" />
+                                </audio>
+                            </div>
+                            <button onclick="addToFavorites(1)" class="btn3_main"><img src="Фото/like2.png"alt="like"></button>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main_section1">
+            <div class="container_main1">
+                <div class="container_main2">
+                    <h1 class="main_title1">Pumpi</h1>
+                    <p class="main_text1">Музыкальный сервис , который позволит вам слушить ваши любимый треки , а также
+                        добавлять свои абсолютно бесплатно.</p>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+
+
+
+    <footer class="footer">
+        <ul class="footer_list">
+            <li class="footer_item">
+                <form action="index.html">
+                    <button class="btn_footer">
+                        <img src="Фото/main.jpg" alt="Главная" class="footer_img" />
+
+                    </button>
+                </form>
+            </li>
+            <li class="footer_item">
+                <form action="favorites.html">
+                    <button class="btn_footer">
+                        <img src="Фото/like.png" alt="Избранное" class="footer_img" />
+
+                    </button>
+                </form>
+            </li>
+            <li class="footer_item">
+                <form action="history.html">
+                    <button class="btn_footer">
+                        <img src="Фото/history.jpg" alt="История" class="footer_img" />
+
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </footer>
+
+    <script>
+        function addToFavorites(trackId) {
+            // Берем текущий список
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+            // Проверка, есть ли уже трек
+            if (favorites.some(item => item.id === trackId)) {
+                alert('Этот трек уже в избранном.');
+                return;
+            }
+
+            //данные треков для избранного
+            const tracksData = {
+                1: {
+                    title: "Adam Gonte - I_Hate_Everything...",
+                    src: "music/rock/Three_Days_Grace_-_I_Hate_Everything_About_You.mp3"
+                },
+                2: {
+                    title: "In the End - Linkin Park",
+                    src: "music/rock/Linkin_Park_-_In_The_End.mp3"
+                },
+                3: {
+                    title: "Numb - Linkin Park",
+                    src: "music/rock/Linkin_Park_-_Numb.mp3"
+                },
+                4: {
+                    title: "Nirvana - Smells like teen spirit",
+                    src: "music/rock/smells-like-teen-spirit.mp3"
+                },
+                5: {
+                    title: "Miyagi Rem Digga - I Got_Love",
+                    src: "music/rap/Miyagi_Rem_Digga_-_I_Got_Love.mp3"
+                }
+
+            };
+
+            const track = tracksData[trackId];
+
+            if (track) {
+                // Добавляем объект с данными
+                favorites.push({ id: trackId, title: track.title, src: track.src });
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+                alert('Трек добавлен в избранное!');
+            } else {
+                alert('Трек не найден.');
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const allAudios = document.querySelectorAll('audio');
+
+            allAudios.forEach(audio => {
+                audio.addEventListener('play', () => {
+                    allAudios.forEach(otherAudio => {
+                        if (otherAudio !== audio) {
+                            otherAudio.pause();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+
+</body>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Моя страница с галереей треков</title>
+<style>
+  body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  /* Раздел с изображением и описанием */
+  .reposing_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+  }
+  .reposing_img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .reposing_img h3 {
+    color: #00e3ff;
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  .reposing_img p {
+    font-size: 17px;
+    line-height: 1.4;
+    max-width: 600px;
+    padding: 10px;
+  }
+  /* Кнопка "Узнать больше" */
+  .btn_modile {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 2px solid #00e3ff;
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #00e3ff;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  .btn_modile:hover {
+    background-color: #00e3ff;
+    color: #111;
+  }
+  /* Анимации */
+  @keyframes animation2 {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* Галерея треков */
+  .music-gallery {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .gallery-container {
+    overflow: hidden;
+    width: 80%;
+  }
+  #tracks {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+  .track-card {
+    min-width: 220px;
+    margin: 0 10px;
+    flex-shrink: 0;
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .track-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+  .img_au1 {
+    max-width: 180px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .au1_btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    margin: 8px 0;
+    cursor: pointer;
+    text-align: center;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  .au1_btn:hover {
+    background-color: #444;
+  }
+  /* Контрольные кнопки навигации */
+  .nav-btn {
+    background: #444;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+    user-select: none;
+    margin: 0 10px;
+  }
+  .nav-btn:hover {
+    background: #666;
+  }
+  /* Мобильная адаптация */
+  @media (max-width: 768px) {
+    .music-gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+    .gallery-container {
+      width: 100%;
+    }
+    #tracks {
+      flex-wrap: nowrap;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Ваш раздел -->
+<div class="reposing_img">
+  <img src="ваш_файл.jpg" alt="Ваше изображение" />
+  <h3>Ваш заголовок</h3>
+  <p>Ваш текст. Опишите, что изображение или тема представляет.</p>
+  <a class="btn_modile" href="#">Узнать больше</a>
+</div>
+
+<!-- ГАЛЕРЕЯ ТРЕКОВ -->
+<div class="music-gallery">
+  <button class="nav-btn prev-btn" aria-label="Предыдущий">&lt;</button>
+  <div class="gallery-container">
+    <div class="track-list" id="tracks">
+      
+      <!-- Пример карточки -->
+      <div class="track-card">
+        <img src="путь_к_вашему_файлу1.jpg" alt="Track 1" class="img_au1" />
+        <button class="au1_btn">Название трека 1</button>
+        <audio controls src="путь_к_вашему_треку1.mp3"></audio>
+        <button class="btn2_main">В избранное</button>
+      </div>
+
+      <!-- Добавьте свои карточки по аналогии -->
+      
+    </div>
+  </div>
+  <button class="nav-btn next-btn" aria-label="Следующий">&gt;</button>
+</div>
+
+<!-- Скрипт для слайдера -->
+<script>
+const trackContainer = document.getElementById('tracks');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+const totalCards = document.querySelectorAll('.track-card').length;
+
+let currentIndex = 0;
+
+function getVisibleCardsCount() {
+  const containerWidth = document.querySelector('.music-gallery').offsetWidth;
+  const cardWidth = 220; // ширина карточки
+  const margin = 20; // сумма отступов
+  return Math.floor(containerWidth / (cardWidth + (margin / 2)));
+}
+
+function updateSlide() {
+  const visibleCount = getVisibleCardsCount();
+  if (currentIndex < 0) currentIndex = 0;
+  if (currentIndex > totalCards - visibleCount) currentIndex = Math.max(0, totalCards - visibleCount);
+  const offset = -currentIndex * (220 + 20);
+  trackContainer.style.transform = `translateX(${offset}px)`;
+}
+
+// Кнопки навигации
+prevBtn.addEventListener('click', () => {
+  currentIndex--;
+  updateSlide();
+});
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  updateSlide();
+});
+
+// Обновление при ресайзе окна
+window.addEventListener('resize', () => {
+  updateSlide();
+});
+</script>
+
+</body>
+</html>

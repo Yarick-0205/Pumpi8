@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pumpi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+<header class="header">
+    
+    <div class="container_header1">
+        <div class="container_container1">
+            <img src="Логотип/Логотип2.png" alt="Лого" class="header_img">
+            <p class="header_text1">Pumpi</p>
+        </div>
+        <div class="container_header2">
+            <h2 class="header_title2">WANNA GOOD MUSIC</h2>
+            <p class="header_text2">then join us</p>
+        </div>
+        <ul class="header_list">
+            <li class="header_item"><a href="index.html">Главная</a></li>
+            <li class="header_item"><a href="favorites.html">Избранное</a></li>
+            <li class="header_item"><a href="history.html">История</a></li>
+        </ul>
+    </div>
+    
+</header>
+
+
+
+
+<main class="main">
+    <section class="main_section2">
+        <h1 class="main_title2">Мои избранные треки</h1>
+        <div id="favorites-container" class="container_main_au">
+        <!-- Здесь появятся треки -->
+        </div>
+    </section>
+
+    
+  
+    
+    <button class="btn_like">
+        <a href="index.html" >Назад</a>
+    </button>
+</main>
+    
+
+
+
+
+<footer class="footer">
+    <ul class="footer_list">
+        <li class="footer_item">
+            <form action="index.html">
+                <button class="btn_footer">
+                    <img src="Фото/main.jpg" alt="Главная" class="footer_img" />
+                    
+                </button>
+            </form>
+        </li>
+        <li class="footer_item">
+            <form action="favorites.html">
+                <button class="btn_footer">
+                    <img src="Фото/like.png" alt="Избранное" class="footer_img" />
+                    
+                </button>
+            </form>
+        </li>
+        <li class="footer_item">
+            <form action="history.html">
+                <button class="btn_footer">
+                    <img src="Фото/history.jpg" alt="История" class="footer_img" />
+                    
+                </button>
+            </form>
+        </li>
+    </ul>
+</footer>
+
+<script>
+
+
+function loadFavorites() {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const container = document.getElementById('favorites-container');
+    container.innerHTML = '';
+
+    if (favorites.length === 0) {
+        container.innerHTML = '<p>Нет избранных треков.</p>';
+        return;
+    }
+
+    favorites.forEach((track, index) => {
+        const div = document.createElement('div');
+        div.className = 'favorite_track';
+        div.innerHTML = `
+            <div class="container_au1">
+                <img src="Фото/mp31(1).jpeg" alt="au1" class="img_au1" />
+                <form class="main_au_btn1" action="#">
+                    <button class="au1_btn">${track.title}</button>
+                </form>
+            
+                <audio controls class="au1">
+                    <source src="${track.src}" type="audio/mpeg" />
+                    Ваш браузер не поддерживает аудио.
+                </audio>
+                <button onclick="removeFromFavorites(${index})" class="btn2_main">Удалить из избранного</button>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
+
+function removeFromFavorites(index) {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    favorites.splice(index, 1);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    loadFavorites(); // Обновляем список после удаления
+}
+
+window.onload = loadFavorites;
+</script>
+</body>
+</html>
