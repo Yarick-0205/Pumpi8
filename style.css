@@ -175,6 +175,7 @@ img {
   max-width: 700px;          /* общая ширина всех карточек - измените по необходимости */
   overflow-y: auto;
   overscroll-behavior: contain ;
+  margin-bottom: 20px;
 }
 
 /* hover - только тень (без масштабирования, чтобы не ломать высоту) */
@@ -308,6 +309,9 @@ img {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: all 0.3s;
   position: relative;
+}
+.container_in_main2{
+  margin-left: -30px;
 }
 .container_au2:hover {
   transform: scale(1.05);
