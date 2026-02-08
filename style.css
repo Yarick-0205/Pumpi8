@@ -341,11 +341,12 @@ img {
   width: 100%;
   margin-bottom: 5px;
   margin-top: 15px;
+  color: #121212 ;
 }
 .au2_2{
   display: flex;
   margin-top: 60px;
-  margin-left: 40px;
+ 
 }
 
 /* Кнопка добавления в избранное */
@@ -366,7 +367,7 @@ img {
   background: #777;
 }
 .container_in_au2_2{
-  width: 300px;
+  width: 100%;
 }
 
 
@@ -524,7 +525,11 @@ img {
     width: 60px;
     height: 60px;
   }
-
+  .btn3_main{
+    padding: 2px 3px;
+    width: 15%;
+    height: 15%;
+  }
 
 
 
@@ -534,6 +539,7 @@ img {
     flex-direction: column;
     align-items: center;
   }
+
 }
 
 
