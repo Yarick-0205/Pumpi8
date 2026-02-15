@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pumpi</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_favorites1.css">
 </head>
 <body class="body">
 <header class="header">
@@ -21,7 +21,7 @@
         <ul class="header_list">
             <li class="header_item"><a href="index.html">Главная</a></li>
             <li class="header_item"><a href="favorites.html">Избранное</a></li>
-            <li class="header_item"><a href="history.html">История</a></li>
+            <li class="header_item"><a href="about_us.html">История</a></li>
         </ul>
     </div>
     
@@ -33,8 +33,8 @@
 <main class="main">
     <section class="main_section2">
         <h1 class="main_title2">Мои избранные треки</h1>
-        <div id="favorites-container" class="container_main_au">
-        <!-- Здесь появятся треки -->
+        <div id="favorites-container" class="container_main_au"> 
+            <!-- Здесь появятся треки -->
         </div>
     </section>
 
@@ -69,7 +69,7 @@
             </form>
         </li>
         <li class="footer_item">
-            <form action="history.html">
+            <form action="about_us.html ">
                 <button class="btn_footer">
                     <img src="Фото/history.jpg" alt="История" class="footer_img" />
                     
@@ -98,15 +98,17 @@ function loadFavorites() {
         div.innerHTML = `
             <div class="container_au1">
                 <img src="Фото/mp31(1).jpeg" alt="au1" class="img_au1" />
-                <form class="main_au_btn1" action="#">
-                    <button class="au1_btn">${track.title}</button>
-                </form>
+                <div class="au1_1">
+                    <form class="main_au_btn1" action="#">
+                        <button class="au1_btn">${track.title}</button>
+                    </form>
             
-                <audio controls class="au1">
-                    <source src="${track.src}" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
-                <button onclick="removeFromFavorites(${index})" class="btn2_main">Удалить из избранного</button>
+                    <audio controls class="au1">
+                        <source src="${track.src}" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                    <button onclick="removeFromFavorites(${index})" class="btn2_main"><img src="Фото/like2.png"alt="like"></button>
+                </div>
             </div>
         `;
         container.appendChild(div);
