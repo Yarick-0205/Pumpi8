@@ -137,7 +137,7 @@ img {
   gap: 12px;
   align-items: center;
   width: 100%;
-  max-width: 700px;          /* общая ширина всех карточек - измените по необходимости */
+  max-width: 800px;          /* общая ширина всех карточек - измените по необходимости */
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -146,7 +146,7 @@ img {
 .container_au1 {
   background: #333;
   border-radius: 10px;
-  width: 80%;               /* все карточки одинаковой длины (берут ширину .container_main_au) */
+  width: 330px;               /* все карточки одинаковой длины (берут ширину .container_main_au) */
   height: 100px;              /* фиксированная высота */
   padding: 6px 10px;
   display: flex;
@@ -218,13 +218,6 @@ img {
 }
 
 /* Дополнительный элемент исполнения (если добавите в HTML) */
-.track-artist {
-  font-size: 11px;
-  color: #bbb;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
 /* Аудиоплеер - стоит под названием, адаптивная ширина через clamp чтоб на мобилке оставался удобным */
 .au1 {
@@ -255,8 +248,20 @@ img {
 .btn2_main:hover {
   background: #777;
 }
-
-
+.btn_dlike{
+  background: linear-gradient(135deg, #444, #222);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  transition: background 0.3s;
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+}
+.btn_dlike:hover{
+   background: linear-gradient(135deg, #666, #444);
+}
 
 
 
@@ -390,9 +395,7 @@ img {
 
 
 
-  .container_au1 {
-    width: 90%;
-  }
+ 
   .main_title2{
     font-size: 15px;
   }
